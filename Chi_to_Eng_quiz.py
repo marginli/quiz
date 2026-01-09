@@ -105,4 +105,11 @@ if not st.session_state.game_over:
     st.button("送出答案", on_click=check_answer)
 
     if st.session_state.wrong_attempts > 0:
-        st.info(f"加油！這題已經試了 {st.session_state.wrong_attempts
+        st.info(f"加油！這題已經試了 {st.session_state.wrong_attempts} 次...")
+
+else:
+    # 結束畫面
+    st.balloons()
+    st.success("🎉 測驗結束！")
+    st.markdown(f"## 您的最終成績是： {st.session_state.score} 分")
+    st.button("🔄 再玩一次", on_click=restart_game)
